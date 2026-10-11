@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Design Sketch Submission Demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background-color: #f0f2f5;
+      color: #333;
+      padding: 20px;
+    }
+    .wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .top-bar {
+      background: #fff;
+      padding: 16px 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+    button {
+      background: #222;
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 13px;
+    }
+    button:hover {
+      background: #444;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #bbb;
+      border-radius: 6px;
+      padding: 16px;
+    }
+    .card h2 {
+      font-size: 15px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    /* Phong cách Wireframe phác thảo (Grayscale) */
+    .wireframe-box {
+      border: 2px solid #222;
+      background: #fff;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .header-wf {
+      border: 1px solid #333;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f9f9f9;
+    }
+    .logo-box {
+      font-weight: bold;
+      font-size: 13px;
+      border: 1px dashed #444;
+      padding: 2px 6px;
+    }
+    .menu-desktop {
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+    .burger-icon {
+      font-size: 18px;
+      line-height: 1;
+    }
+    .hero-wf {
+      border: 1px dashed #333;
+      padding: 24px 12px;
+      text-align: center;
+      background: #fafafa;
+    }
+    .hero-title {
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+    .hero-sub {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 12px;
+    }
+    .btn-placeholder {
+      display: inline-block;
+      border: 1px solid #333;
+      padding: 6px 12px;
+      font-size: 11px;
+      background: #eee;
+    }
+    .img-box {
+      aspect-ratio: 16 / 9;
+      border: 1px solid #888;
+      background: #eaeaea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      color: #666;
+      margin-bottom: 6px;
+      position: relative;
+    }
+    .img-box::before {
+      content: "[ X : Image Placeholder ]";
+    }
+    .desc-line {
+      font-size: 11px;
+      color: #555;
+      line-height: 1.4;
+    }
+    .cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .single-card {
+      border: 1px dashed #999;
+      padding: 8px;
+    }
+    .footer-wf {
+      border-top: 1px solid #333;
+      padding-top: 8px;
+      text-align: center;
+      font-size: 11px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="top-bar">
+    <div>
+      <h3 style="margin-bottom: 4px;">Site Sketch Wireframe Generator</h3>
+      <p style="font-size: 13px; color: #666;">Bấm tải để lấy 2 file ảnh PNG nộp vào bài tập:</p>
+    </div>
+    <div class="btn-group">
+      <button onclick="downloadPNG('mobile')">📥 Tải Mobile View (PNG)</button>
+      <button onclick="downloadPNG('desktop')">📥 Tải Desktop View (PNG)</button>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- MOBILE VIEW -->
+    <div class="card">
+      <h2>1. Mobile View (Phone)</h2>
+      <div class="wireframe-box">
+        <div class="header-wf">
+          <span class="logo-box">LOGO</span>
+          <span class="burger-icon">≡</span>
+        </div>
+        <div class="hero-wf">
+          <div class="hero-title">HERO TITLE</div>
+          <div class="hero-sub">Welcome to mobile view</div>
+          <div class="btn-placeholder">[ CTA Button ]</div>
+        </div>
+        <div class="single-card">
+          <div class="img-box"></div>
+          <div style="font-weight: bold; font-size: 12px; margin-bottom: 4px;">Featured Project 1</div>
+          <div class="desc-line">Single-column stacked item designed for easy touch scrolling.</div>
+        </div>
+        <div class="single-card">
+          <div class="img-box"></div>
+          <div style="font-weight: bold; font-size: 12px; margin-bottom: 4px;">Featured Project 2</div>
+          <div class="desc-line">Secondary block arranged vertically below.</div>
+        </div>
+        <div class="footer-wf">© 2026 Mobile Sketch Wireframe</div>
+      </div>
+    </div>
+
+    <!-- DESKTOP VIEW -->
+    <div class="card">
+      <h2>2. Larger Screen View (Desktop)</h2>
+      <div class="wireframe-box">
+        <div class="header-wf">
+          <span class="logo-box">SITE LOGO</span>
+          <span class="menu-desktop">HOME &nbsp; ABOUT &nbsp; PROJECTS &nbsp; CONTACT</span>
+        </div>
+        <div class="hero-wf">
+          <div class="hero-title">PORTFOLIO LANDING PAGE</div>
+          <div class="hero-sub">Clear introductory text and responsive layout showcase</div>
+          <div class="btn-placeholder">[ Explore Work ]</div>
+        </div>
+        <div>
+          <div style="font-weight: bold; font-size: 13px; margin-bottom: 8px;">Featured Projects (3-Column Grid)</div>
+          <div class="cards-row">
+            <div class="single-card">
+              <div class="img-box"></div>
+              <div style="font-weight: bold; font-size: 12px;">Project A</div>
+              <div class="desc-line">Summary description...</div>
+            </div>
+            <div class="single-card">
+              <div class="img-box"></div>
+              <div style="font-weight: bold; font-size: 12px;">Project B</div>
+              <div class="desc-line">Summary description...</div>
+            </div>
+            <div class="single-card">
+              <div class="img-box"></div>
+              <div style="font-weight: bold; font-size: 12px;">Project C</div>
+              <div class="desc-line">Summary description...</div>
+            </div>
+          </div>
+        </div>
+        <div class="footer-wf">© 2026 Desktop Sketch Wireframe • All Rights Reserved</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function downloadPNG(type) {
+    const isMobile = type === 'mobile';
+    const canvas = document.createElement('canvas');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = isMobile ? 400 : 900;
+    canvas.height = isMobile ? 650 : 580;
+
+    // Background trắng
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Khung viền bản vẽ
+    ctx.strokeStyle = '#222222';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(15, 15, canvas.width - 30, canvas.height - 30);
+
+    // Tiêu đề bản phác thảo
+    ctx.fillStyle = '#111111';
+    ctx.font = 'bold 16px Arial';
+    ctx.fillText(isMobile ? 'SKETCH: MOBILE VIEW' : 'SKETCH: LARGER SCREEN (DESKTOP) VIEW', 30, 45);
+
+    // Header
+    ctx.strokeRect(30, 65, canvas.width - 60, 45);
+    ctx.font = 'bold 13px Arial';
+    ctx.fillText(isMobile ? 'LOGO' : 'SITE LOGO', 45, 93);
+
+    if (isMobile) {
+      ctx.font = 'bold 18px Arial';
+      ctx.fillText('≡', canvas.width - 60, 93);
+    } else {
+      ctx.font = '12px Arial';
+      ctx.fillText('Home       About       Projects       Contact', canvas.width - 320, 93);
+    }
+
+    // Hero Section
+    ctx.setLineDash([4, 4]);
+    ctx.strokeRect(30, 125, canvas.width - 60, 110);
+    ctx.setLineDash([]);
+    ctx.textAlign = 'center';
